@@ -1,0 +1,16 @@
+#!/bin/sh
+DEPLOY_FOLDER="/home/utnso/git/tp-2016-2c-SegmentationFault"
+
+#CREO DIRECTORIO DONDE VA A ESTAR EL FILE SYSTEM
+cd
+rm -rf FUSE2
+mkdir FUSE2
+PATH_POKEDEX="/home/utnso/FUSE2"
+
+#SETEO VARIABLES DE AMBIENTE
+export IPSERVER="127.0.0.1"
+export PUERTOSERVER=7000
+
+#EJECUTAR POKEDEX CLIENT
+cd $DEPLOY_FOLDER/PokedexClient/Debug
+./PokedexClient $PATH_POKEDEX -f -s
